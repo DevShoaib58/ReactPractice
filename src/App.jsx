@@ -1,25 +1,23 @@
-import { useState } from "react";
-
+import Card from "./Components/Card";
+import Counter from "./Components/Counter";
 
 function App() {
-  const addValue = () => {
-    setCounter(counter + 1)
+  let someObj = {
+    Fname: "Shoaib",
+    age: 25,
+    email: "Shoaib@email.com"
   }
-  const removeValue = () => {
-    setCounter(counter - 1)
-  }
-  const reset = () => {
-    setCounter(counter = 0)
-  }
-  let [counter, setCounter] = useState(0)
+  let someArray = [1, 2, 3, 4]
   return (
-    <div style={{ margin: "auto", display: "block", textAlign: "center", padding: '0px 10px', }}>
-      <h1>Hello React App</h1>
-      <h1>Counter Value {counter}</h1>
-      <button onClick={addValue}>Add</button><br />
-      <button onClick={removeValue}>Remove</button>
-      <button onClick={reset}>Remove</button>
-    </div>
+    <>
+      <Counter />
+      <div className=" flex flex-wrap m-4 container mx-auto">
+        <Card name="Shoaib" age="5" email="Shoaib@email.com" />
+        <Card someObjs={someObj} />
+        <Card someArrays={someArray} />
+        <Card name="Talha" btn="Click Me" />
+      </div>
+    </>
   );
 }
 
