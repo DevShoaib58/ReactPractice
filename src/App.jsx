@@ -2,6 +2,7 @@ import BgChanger from "./Components/BgChanger";
 import BgForBox from "./Components/BgForBox";
 import Card from "./Components/Card";
 import Counter from "./Components/Counter";
+import PasswordGenerator from "./Components/PasswordGenerator";
 
 function App() {
   let someObj = {
@@ -20,7 +21,8 @@ function App() {
         <Card name="Talha" btn="Click Me" />
       </div> */}
       {/* <BgChanger /> */}
-      <BgForBox />
+      {/* <BgForBox /> */}
+      <PasswordGenerator />
     </>
   );
 }
