@@ -2,17 +2,17 @@ import BgChanger from "./Components/BgChanger";
 import BgForBox from "./Components/BgForBox";
 import Card from "./Components/Card";
 import Counter from "./Components/Counter";
-import Movie from "./Components/Movie";
+import Gallery from "./Components/Gallery";
 import PasswordGenerator from "./Components/PasswordGenerator";
 import UserProfile from "./Components/UserProfile";
 
 function App() {
-  let someObj = {
-    Fname: "Shoaib",
-    age: 25,
-    email: "Shoaib@email.com"
-  }
-  let someArray = [1, 2, 3, 4]
+  // let someObj = {
+  //   Fname: "Shoaib",
+  //   age: 25,
+  //   email: "Shoaib@email.com"
+  // }
+  // let someArray = [1, 2, 3, 4]
   return (
     <>
       {/* <Counter />
@@ -26,7 +26,7 @@ function App() {
       {/* <BgForBox /> */}
       {/* <PasswordGenerator /> */}
       {/* <UserProfile /> */}
-      <Movie />
+      <Gallery />
     </>
   );
 }
