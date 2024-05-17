@@ -2,7 +2,9 @@ import BgChanger from "./Components/BgChanger";
 import BgForBox from "./Components/BgForBox";
 import Card from "./Components/Card";
 import Counter from "./Components/Counter";
+import Movie from "./Components/Movie";
 import PasswordGenerator from "./Components/PasswordGenerator";
+import UserProfile from "./Components/UserProfile";
 
 function App() {
   let someObj = {
@@ -22,7 +24,9 @@ function App() {
       </div> */}
       {/* <BgChanger /> */}
       {/* <BgForBox /> */}
-      <PasswordGenerator />
+      {/* <PasswordGenerator /> */}
+      {/* <UserProfile /> */}
+      <Movie />
     </>
   );
 }
