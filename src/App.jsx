@@ -25,8 +25,8 @@ function App() {
       {/* <BgChanger /> */}
       {/* <BgForBox /> */}
       {/* <PasswordGenerator /> */}
-      {/* <UserProfile /> */}
-      <Gallery />
+      <UserProfile />
+      {/* <Gallery /> */}
     </>
   );
 }

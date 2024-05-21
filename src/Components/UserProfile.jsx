@@ -1,47 +1,60 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
-
 const UserProfile = () => {
-    const [data, setData] = useState([])
+    const refresh = () => {
+
+    }
     useEffect(() => {
-        // fetch('https://jsonplaceholder.typicode.com/posts?_limit=10')
-        fetch('https://randomuser.me/api/')
-            .then(response => response.json())
-            .then(res => {
-                setData(res.results[0])
-            });
+        axios.get("https://randomuser.me/api/")
+            .then(res => setData(res.data.results[0]))
+            .catch(err => console.log(err))
     }, [])
+    const [data, setData] = useState([])
 
     return (
+        <section className="text-gray-600 body-font">
+            {/* //* If API Takes some time to Load data Always use ternary or Loader otherwsie you won't get data */}
+            {data.name ? <div className="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+                <img className="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="hero" src={data.picture.large} />
+                <div className="text-center lg:w-2/3 w-full">
+                    <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">{data.name.first}</h1>
 
-        <div className="max-w-lg mx-auto p-8 sm:flex sm:space-x-6 dark:bg-gray-50 dark:text-gray-800" style={{ background: data.gender == "male" ? 'blue' : 'pink', width: "500px" }}>
-            {/* <div className="max-w-lg mx-auto p-8 sm:flex sm:space-x-6 dark:bg-gray-50 dark:text-gray-800"> */}
-            {/* <div className="max-w-lg mx-auto p-8 sm:flex sm:space-x-6 dark:bg-gray-50 dark:text-gray-800"> */}
-            {console.log('data: ', data)}
-            <div className="flex-shrink-0 w-full mb-6 h-44 sm:h-32 sm:w-32 sm:mb-0">
-                {/* <img src={data.picture.medium} alt="" className="object-cover object-center w-full h-full rounded dark:bg-gray-500" /> */}
-            </div>
-            <div className="flex flex-col space-y-4">
-                <div>
-                    {/* <h2 className="text-2xl font-semibold">{data.name.last}</h2> */}
-                    <h2 className="text-2xl font-semibold">Leroy Jenkins</h2>
-                    {/* <span className="text-sm dark:text-gray-600">{data.name.title}</span> */}
+                    <p className="mb-8 leading-relaxed">{data.email}</p>
+                    <p className="mb-8 leading-relaxed">{data.location.city}</p>
+                    <div className="text-center mt-2 leading-none flex justify-center  w-full py-4">
+                        <span className="text-gray-400 mr-3 inline-flex items-center leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                            </svg>
+                            {data.gender}
+                        </span>
+                        <span className="text-gray-400 mr-3 inline-flex items-center leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+                            </svg>
+                            {data.phone}
+                        </span>
+                        <span className="text-gray-400 mr-3 inline-flex items-center leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                            </svg>
+                            {data.registered.age}
+                        </span>
+
+                    </div>
+                    <div className="flex justify-center">
+                        <button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg" onClick={refresh}>Refresh</button>
+                    </div>
                 </div>
-                <div className="space-y-1">
-                    <span className="flex items-center space-x-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-label="Email address" className="w-4 h-4">
-                            <path fill="currentColor" d="M274.6,25.623a32.006,32.006,0,0,0-37.2,0L16,183.766V496H496V183.766ZM464,402.693,339.97,322.96,464,226.492ZM256,51.662,454.429,193.4,311.434,304.615,256,268.979l-55.434,35.636L57.571,193.4ZM48,226.492,172.03,322.96,48,402.693ZM464,464H48V440.735L256,307.021,464,440.735Z"></path>
-                        </svg>
-                        <span className="dark:text-gray-600">{data.email}</span>
-                    </span>
-                    <span className="flex items-center space-x-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-label="Phonenumber" className="w-4 h-4">
-                            <path fill="currentColor" d="M449.366,89.648l-.685-.428L362.088,46.559,268.625,171.176l43,57.337a88.529,88.529,0,0,1-83.115,83.114l-57.336-43L46.558,362.088l42.306,85.869.356.725.429.684a25.085,25.085,0,0,0,21.393,11.857h22.344A327.836,327.836,0,0,0,461.222,133.386V111.041A25.084,25.084,0,0,0,449.366,89.648Zm-20.144,43.738c0,163.125-132.712,295.837-295.836,295.837h-18.08L87,371.76l84.18-63.135,46.867,35.149h5.333a120.535,120.535,0,0,0,120.4-120.4v-5.333l-35.149-46.866L371.759,87l57.463,28.311Z"></path>
-                        </svg>
-                        <span className="dark:text-gray-600">{data.cell}</span>
-                    </span>
+            </div> : <div className="flex-col gap-4 w-full flex items-center justify-center">
+                <div className="w-28 h-28 border-8 text-blue-400 text-4xl animate-spin border-gray-300 flex items-center justify-center border-t-blue-400 rounded-full">
+                    <svg viewBox="0 0 24 24" fill="currentColor" height="1em" width="1em" className="animate-ping">
+                        <path d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.337 6.182 14.976 4.8 12.001 4.8zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.976 12 6.001 12z"></path>
+                    </svg>
                 </div>
-            </div>
-        </div>
+            </div>}
+
+        </section>
     );
 };
 
