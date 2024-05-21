@@ -23,9 +23,9 @@ function App() {
         <Card name="Talha" btn="Click Me" />
       </div> */}
       {/* <BgChanger /> */}
-      {/* <BgForBox /> */}
+      <BgForBox />
       {/* <PasswordGenerator /> */}
-      <UserProfile />
+      {/* <UserProfile /> */}
       {/* <Gallery /> */}
     </>
   );

@@ -6,10 +6,10 @@ const BgForBox = () => {
         <div className=" w-full h-full container text-center border-teal-100 p-10  m-auto" style={{ background: color }}>
             <h1>BackGround Color Changer</h1>
             <nav className=" p-4 m-4 bg-gray-400 rounded-2xl">
-                <button onClick={() => { setColor("pink") }}>Pink Color</button>
-                <button onClick={() => { setColor(`#${Math.floor(Math.random() * 16777215).toString(16)}`) }}>Random Color</button>
-                <button onClick={() => { setColor("green") }}>Green Color</button>
-                <button onClick={() => { setColor("red") }}>Red Color</button>
+                <button className=" m-10 border-2 p-2 rounded-md" onClick={() => { setColor("pink") }}> Pink Color </button>
+                <button className=" m-10 border-2 p-2 rounded-md" onClick={() => { setColor(`#${Math.floor(Math.random() * 16777215).toString(16)}`) }}> Random Color </button>
+                <button className=" m-10 border-2 p-2 rounded-md" onClick={() => { setColor("green") }}> Green Color </button>
+                <button className=" m-10 border-2 p-2 rounded-md" onClick={() => { setColor("red") }}> Red Color </button>
             </nav>
         </div>
     );
