@@ -5,6 +5,7 @@ import Counter from "./Components/Counter";
 import DigiClock from "./Components/DigiClock";
 import Gallery from "./Components/Gallery";
 import PasswordGenerator from "./Components/PasswordGenerator";
+import Profile from "./Components/Profile";
 import UserProfile from "./Components/UserProfile";
 
 function App() {
@@ -28,7 +29,8 @@ function App() {
       {/* <PasswordGenerator /> */}
       {/* <UserProfile /> */}
       {/* <Gallery /> */}
-      <DigiClock />
+      {/* <DigiClock /> */}
+      <Profile />
     </>
   );
 }
