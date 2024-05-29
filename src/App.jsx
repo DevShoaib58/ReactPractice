@@ -4,8 +4,8 @@ import Card from "./Components/Card";
 import Counter from "./Components/Counter";
 import DigiClock from "./Components/DigiClock";
 import Gallery from "./Components/Gallery";
+import Listofprofile from "./Components/Listofprofile";
 import PasswordGenerator from "./Components/PasswordGenerator";
-import Profile from "./Components/Profile";
 import UserProfile from "./Components/UserProfile";
 
 function App() {
@@ -28,9 +28,9 @@ function App() {
       {/* <BgForBox /> */}
       {/* <PasswordGenerator /> */}
       {/* <UserProfile /> */}
-      {/* <Gallery /> */}
+      <Gallery />
       {/* <DigiClock /> */}
-      <Profile />
+      {/* <Listofprofile /> */}
     </>
   );
 }

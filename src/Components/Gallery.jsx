@@ -4,22 +4,26 @@ import { useEffect, useState } from "react";
 
 const Gallery = () => {
     // let baseURL = "https://picsum.photos/v2/list";
+    //* Here I'm Adding key into .env and creating variable 
     let GalleryKey = import.meta.env.VITE_SOME_KEY
-    console.log('GalleryKey: ', GalleryKey);
     let baseURL = `https://api.unsplash.com/photos/?client_id=${GalleryKey}`;
+    // console.log('GalleryKey: ', GalleryKey);
     //* Here Creating variable for API URL
     const [picData, setPicdata] = useState([])
-    //* Here Creating state variable for data holding
+    //* Here Creating state variable for data holding 
     useEffect(() => {
-        axios.get(`${baseURL}`).then(
-            response =>
-                //* you don't need to add {} and return keyword if you are using this syntax 
+        const fetchingImage = async () => {
+            try {
+                const response = await axios.get(`${baseURL}`)
                 setPicdata(response.data)
-        )
-            .catch(error =>
-                console.log(error)
-            )
-    }, [])
+            }
+            catch (error) {
+                console.error(error)
+            }
+        }
+        fetchingImage()
+    })
+
     //* Here in useEffect it will run the code as its load and in the last we need to give it a dependency array if or useEffect is dependent on any change
     return (
         <section className="text-gray-600 body-font">
