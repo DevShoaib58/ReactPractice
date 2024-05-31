@@ -5,6 +5,7 @@ import Counter from "./Components/Counter";
 import DigiClock from "./Components/DigiClock";
 import Gallery from "./Components/Gallery";
 import Listofprofile from "./Components/Listofprofile";
+import Navbar from "./Components/Navbar";
 import PasswordGenerator from "./Components/PasswordGenerator";
 import UserProfile from "./Components/UserProfile";
 
@@ -17,6 +18,7 @@ function App() {
   // let someArray = [1, 2, 3, 4]
   return (
     <>
+      <Navbar />
       {/* <Counter />
       <div className=" flex flex-wrap m-4 container mx-auto">
         <Card name="Shoaib" age="5" email="Shoaib@email.com" />
