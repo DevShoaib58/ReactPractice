@@ -22,7 +22,7 @@ const Gallery = () => {
             }
         }
         fetchingImage()
-    })
+    }, [])
 
     //* Here in useEffect it will run the code as its load and in the last we need to give it a dependency array if or useEffect is dependent on any change
     return (

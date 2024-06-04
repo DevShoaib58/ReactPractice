@@ -1,6 +1,6 @@
+import { Route, Routes } from "react-router";
 import BgChanger from "./Components/BgChanger";
 import BgForBox from "./Components/BgForBox";
-import Card from "./Components/Card";
 import Counter from "./Components/Counter";
 import DigiClock from "./Components/DigiClock";
 import Gallery from "./Components/Gallery";
@@ -8,31 +8,27 @@ import Listofprofile from "./Components/Listofprofile";
 import Navbar from "./Components/Navbar";
 import PasswordGenerator from "./Components/PasswordGenerator";
 import UserProfile from "./Components/UserProfile";
+import Home from "./Page/Home";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
-  // let someObj = {
-  //   Fname: "Shoaib",
-  //   age: 25,
-  //   email: "Shoaib@email.com"
-  // }
-  // let someArray = [1, 2, 3, 4]
+
   return (
     <>
-      <Navbar />
-      {/* <Counter />
-      <div className=" flex flex-wrap m-4 container mx-auto">
-        <Card name="Shoaib" age="5" email="Shoaib@email.com" />
-        <Card someObjs={someObj} />
-        <Card someArrays={someArray} />
-        <Card name="Talha" btn="Click Me" />
-      </div> */}
-      {/* <BgChanger /> */}
-      {/* <BgForBox /> */}
-      {/* <PasswordGenerator /> */}
-      {/* <UserProfile /> */}
-      <Gallery />
-      {/* <DigiClock /> */}
-      {/* <Listofprofile /> */}
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/bgchanger" element={<BgChanger />}></Route>
+          <Route path="/bgforbox" element={<BgForBox />}></Route>
+          <Route path="/counter" element={<Counter />}></Route>
+          <Route path="/passwordgenerator" element={<PasswordGenerator />}></Route>
+          <Route path="/userprofile" element={<UserProfile />}></Route>
+          <Route path="/gallery" element={<Gallery />}></Route>
+          <Route path="/digiclock" element={<DigiClock />}></Route>
+          <Route path="/listofprofile" element={<Listofprofile />}></Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
