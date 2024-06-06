@@ -2,12 +2,12 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 const UserProfile = () => {
     const refresh = () => {
-
-    }
-    useEffect(() => {
         axios.get("https://randomuser.me/api/")
             .then(res => setData(res.data.results[0]))
             .catch(err => console.log(err))
+    }
+    useEffect(() => {
+        refresh();
     }, [])
     const [data, setData] = useState([])
 

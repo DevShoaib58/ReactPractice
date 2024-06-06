@@ -10,6 +10,7 @@ import PasswordGenerator from "./Components/PasswordGenerator";
 import UserProfile from "./Components/UserProfile";
 import Home from "./Page/Home";
 import { BrowserRouter } from "react-router-dom";
+import Cryptocurrency from "./Components/Cryptocurrency";
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
           <Route path="/gallery" element={<Gallery />}></Route>
           <Route path="/digiclock" element={<DigiClock />}></Route>
           <Route path="/listofprofile" element={<Listofprofile />}></Route>
+          <Route path="/cryptocurrency" element={<Cryptocurrency />}></Route>
         </Routes>
       </BrowserRouter>
     </>
