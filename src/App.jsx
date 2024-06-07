@@ -11,6 +11,7 @@ import UserProfile from "./Components/UserProfile";
 import Home from "./Page/Home";
 import { BrowserRouter } from "react-router-dom";
 import Cryptocurrency from "./Components/Cryptocurrency";
+import SpaceLaunch from "./Components/SpaceLaunch";
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
           <Route path="/digiclock" element={<DigiClock />}></Route>
           <Route path="/listofprofile" element={<Listofprofile />}></Route>
           <Route path="/cryptocurrency" element={<Cryptocurrency />}></Route>
+          <Route path="/spacelaunch" element={<SpaceLaunch />}></Route>
         </Routes>
       </BrowserRouter>
     </>
