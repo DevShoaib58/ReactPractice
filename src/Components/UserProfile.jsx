@@ -13,7 +13,7 @@ const UserProfile = () => {
 
     return (
         <section className="text-gray-600 body-font">
-            {/* //* If API Takes some time to Load data Always use ternary or Loader otherwsie you won't get data */}
+            {/* //* If API Takes some time to Load data Always use ternary or Loader other wise you won't get data */}
             {data.name ? <div className="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
                 <img className="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="hero" src={data.picture.large} />
                 <div className="text-center lg:w-2/3 w-full">
